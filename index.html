@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RSA Arbitrage Crypto Trading</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+    integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="libs/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+    integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.20.2/bootstrap-table.min.js"
+    integrity="sha512-9KY1w0S1bRPqvsNIxj3XovwFzZ7bOFG8u0K1LByeMVrzYhLu3v7sFRAlwfhBVFsHRiuMc6shv1lRLCTInwqxNg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.20.2/bootstrap-table.min.css"
+    integrity="sha512-HIPiLbxNKmx+x+VFnDHICgl1nbRzW3tzBPvoeX0mq9dWP9H1ZGMRPXfYsHhcJS1na58bzUpbbfpQ/n4SIL7Tlw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="libs/css/list-groups.css">
+</head>
+
+<body>
+  <div class="col-lg-8 mx-auto p-3 py-md-5">
+    <!-- todo -->
+    <!-- add icons for valr, luno, binance, coingap -->
+    <main>
+      <!-- website slogan -->
+      <h1><i class="fa-brands fa-bitcoin" style="color: gold"></i> South African Crypto Trading</h1>
+      <p class="fs-5 col-md-12">Conducting arbitrage trading strategy on local and international crypto exchanges</p>
+
+      <!-- breaker -->
+      <hr class="col-3 col-md-2 mb-5">
+
+      <!-- display stats -->
+      <div class="row g-5">
+        <!-- display currency stats -->
+        <div class="col-md-4">
+          <div class="feature col">
+            <img src="assets/img/exchange-rate.png" alt="currency stats image" style="width: 50px; height: 50px;" />
+            <h2>Currency Prices</h2>
+
+            <div class="list-group list-group-checkable" style="margin-top: 20px">
+              <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios"
+                id="listGroupCheckableRadios1" value="" checked="">
+              <label class="list-group-item py-3" for="listGroupCheckableRadios1">
+                <div>
+                  <img src="assets/img/bitcoin.png" alt="currency stats image"
+                    style="width: 25px; height: 25px; margin-right: 15px;" />
+                    BITCOIN
+                    <br />
+                  <span id="btc_zar"></span>
+                </div>
+              </label>
+
+              <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios"
+                id="listGroupCheckableRadios2" value="">
+              <label class="list-group-item py-3" for="listGroupCheckableRadios2">
+                <div>
+                  <img src="assets/img/ethereum.png" alt="currency stats image"
+                    style="width: 25px; height: 25px; margin-right: 15px;" />
+                    ETHEREUM
+                    <br /> 
+                  <span id="eth_zar"></span>
+                </div>
+              </label>
+
+              <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios"
+                id="listGroupCheckableRadios3" value="">
+              <label class="list-group-item py-3" for="listGroupCheckableRadios3">
+                <div>
+                  <img src="assets/img/solana.png" alt="currency stats image"
+                    style="width: 25px; height: 25px; margin-right: 15px;" />
+                    SOLANA
+                    <br />
+                  <span id="sol_zar"></span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+        </div>
+        <!-- display wallet stats -->
+        <div class="col-md-4">
+
+          <div class="feature col">
+            <img src="assets/img/bitcoinwallet.png" alt="currency stats image" style="width: 50px; height: 50px;" />
+            <h2>Wallet Accounts</h2>
+            <div class="list-group list-group-checkable" style="margin-top: 20px">
+              <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios1"
+                id="listGroupCheckableRadios11" value="" checked="">
+              <label class="list-group-item py-3" for="listGroupCheckableRadios11">
+                <div>
+                  <!-- <img src="assets/img/bitcoin.png" alt="currency stats image" style="width: 25px; height: 25px; margin-right: 15px;" /> -->
+                  <u>VALR</u> 
+                  <span id="valr_account"></span>
+                </div>
+              </label>
+
+              <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios1"
+                id="listGroupCheckableRadios12" value="">
+              <label class="list-group-item py-3" for="listGroupCheckableRadios12">
+                <div>
+                  <!-- <img src="assets/img/ethereum.png" alt="currency stats image" style="width: 25px; height: 25px; margin-right: 15px;" /> -->
+                  LUNO 
+                  <span></span>
+                </div>
+              </label>
+
+            </div>
+          </div>
+        </div>
+        <!-- buy/sell order  -->
+        <div class="col-md-4">
+          <div class="feature col">
+            <img src="assets/img/trade.png" alt="currency stats image" style="width: 50px; height: 50px;" />
+            <h2>Valr Buy/Sell Order</h2>
+
+            <div class="row">
+
+
+              <div class="col-md-8">
+                <label for="crypto_amount" class="form-label">Amount</label>
+                <input type="number" class="form-control" id="crypto_amount" placeholder="000" value="0.0000001" required="">
+              </div>
+              <div class="col-md-4">
+                <label for="currency" class="form-label">Currency</label>
+                <select class="form-select" id="currency" required="">
+                  <option value="BTC">BTC</option>
+                  <option value="ETH">ETH</option>
+                  <option value="SOL">SOL</option>
+                </select>
+
+              </div>
+
+              <div class="btn-group" role="group" aria-label="Basic example" style="margin-top: 10px;">
+                <button id="valr_buy_btn" type="button" class="btn btn-success">Buy</button>
+                <button id="valr_sell_btn" type="button" class="btn btn-danger">Sell</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- table display bid buy volume difference  -->
+        <div class="row g-5" style="margin-top: -60px;">
+          <div class="col-md-12">
+            <div class="row g-5">
+              <div class="col-md-1">
+                <img src="assets/img/research.png" alt="currency stats image" style="width: 50px; height: 50px;" />
+              </div>
+              <div class="col-md-10" style="margin-bottom: 20px;">
+                <h2>Arbitrage Trading Strategy</h2>
+              </div>
+            </div>
+            <table id="table">
+              <thead>
+                <tr>
+                  <th data-field="id">ID</th>
+                  <th data-field="name">Item Name</th>
+                  <th data-field="price">Item Price</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+
+    </main>
+
+    <footer class="pt-5 my-5 text-muted border-top">
+      Created by the Denver Naicker &middot; &copy; 2022
+    </footer>
+  </div>
+</body>
+
+</html>
