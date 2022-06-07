@@ -8,8 +8,8 @@ const fs = require("fs");
 const cc = require('cryptocompare')
 const { Spot } = require('@binance/connector')
 global.fetch = require('node-fetch')
-const dotenv = require('dotenv').config();
-dotenv.config(); // reads the .env file and sets the environment variables
+const dotenv = require('dotenv').config();  // reads the .env file and sets the environment variables
+const encode = require('nodejs-base64-encode');
 
 const valr_api_key_id = process.env.valr_api_key_id;
 const valr_api_secret = process.env.valr_api_secret;
@@ -220,28 +220,17 @@ app.post('/getValrMarketSummary', function (req, res) {
 //   'key secret': luno_api_secret
 // }  
 
-var headers = {
-  "Authorization": "Basic " + Utilities.base64Encode(luno_api_key_id + ":" + luno_api_secret)
-};
-
-var options = {
-  "headers" : headers 
-};
-
-var response = UrlFetchApp.fetch(url, options); // get api endpoint
-
 axios({
     method: 'get',
     url: 'https://api.luno.com/api/1/orderbook',
-    header:{
-      API_KEY_ID: luno_api_key_id,
-      API_KEY_SECRET: luno_api_secret
+    headers:{
+      "Authorization": "Basic " + encode.encode(luno_api_key_id + ":" + luno_api_secret, 'base64')
     }
   })
     .then(function (response) {
       // res.send(response.data);
-      console.log(JSON.stringify(response));
+      // console.log(JSON.stringify(response));
     })
     .catch(function (error) {
-      console.log(error);
+      // console.log(error);
     });
